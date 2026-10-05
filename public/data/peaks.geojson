@@ -1,0 +1,8 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"name":"Gerlachovský štít","elevation":2655},"geometry":{"type":"Point","coordinates":[20.1317,49.1646]}},
+{"type":"Feature","properties":{"name":"Lomnický štít","elevation":2634},"geometry":{"type":"Point","coordinates":[20.2133,49.1953]}},
+{"type":"Feature","properties":{"name":"Rysy","elevation":2503},"geometry":{"type":"Point","coordinates":[20.0883,49.1795]}},
+{"type":"Feature","properties":{"name":"Kriváň","elevation":2494},"geometry":{"type":"Point","coordinates":[19.9916,49.1636]}},
+{"type":"Feature","properties":{"name":"Chleb","elevation":1646},"geometry":{"type":"Point","coordinates":[19.0561,49.1922]}},
+{"type":"Feature","properties":{"name":"Ostredok","elevation":1592},"geometry":{"type":"Point","coordinates":[19.0833,48.8750]}}
+]}

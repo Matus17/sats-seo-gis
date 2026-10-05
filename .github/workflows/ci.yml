@@ -1,0 +1,28 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_heavy:
+        description: "Spustiť Playwright + Lighthouse (ťažké testy)"
+        type: boolean
+        default: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run build
+      - name: Playwright E2E
+        if: github.event_name != 'workflow_dispatch' || inputs.run_heavy
+        run: npx playwright install --with-deps chromium && npm run test:e2e
+      - name: Lighthouse CI
+        if: github.event_name != 'workflow_dispatch' || inputs.run_heavy
+        run: npm run lhci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: lighthouse, path: .lighthouseci, if-no-files-found: ignore }
