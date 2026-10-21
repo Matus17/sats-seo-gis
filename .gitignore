@@ -3,3 +3,5 @@ dist
 .lighthouseci
 test-results
 playwright-report
+.next/
+.env*.local
